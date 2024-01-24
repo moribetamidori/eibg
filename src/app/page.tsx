@@ -9,27 +9,23 @@ import { List, ListItem } from '@/components/List'
 import { SectionIntro } from '@/components/SectionIntro'
 import { StylizedImage } from '@/components/StylizedImage'
 import { Testimonial } from '@/components/Testimonial'
-import logoBrightPath from '@/images/clients/bright-path/logo-light.svg'
-import logoFamilyFund from '@/images/clients/family-fund/logo-light.svg'
-import logoGreenLife from '@/images/clients/green-life/logo-light.svg'
-import logoHomeWork from '@/images/clients/home-work/logo-light.svg'
-import logoMailSmirk from '@/images/clients/mail-smirk/logo-light.svg'
-import logoNorthAdventures from '@/images/clients/north-adventures/logo-light.svg'
 import logoPhobiaDark from '@/images/clients/phobia/logo-dark.svg'
-import logoPhobiaLight from '@/images/clients/phobia/logo-light.svg'
-import logoUnseal from '@/images/clients/unseal/logo-light.svg'
 import imageLaptop from '@/images/laptop.jpg'
 import { type CaseStudy, type MDXEntry, loadCaseStudies } from '@/lib/mdx'
+import enhancer from '@/images/types/1.png'
+import conjurer from '@/images/types/2.png'
+import intuitor from '@/images/types/3.png'
+import specialist from '@/images/types/4.png'
+import connector from '@/images/types/5.png'
+import transmuter from '@/images/types/6.png'
 
-const clients = [
-  ['Phobia', logoPhobiaLight],
-  ['Family Fund', logoFamilyFund],
-  ['Unseal', logoUnseal],
-  ['Mail Smirk', logoMailSmirk],
-  ['Home Work', logoHomeWork],
-  ['Green Life', logoGreenLife],
-  ['Bright Path', logoBrightPath],
-  ['North Adventures', logoNorthAdventures],
+const types = [
+  ['Enhancer', enhancer],
+  ['Conjurer', conjurer],
+  ['Intuitor', intuitor],
+  ['Specialist', specialist],
+  ['Connector', connector],
+  ['Transmuter', transmuter],
 ]
 
 function Clients() {
@@ -37,8 +33,8 @@ function Clients() {
     <div className="mt-24 rounded-4xl bg-neutral-950 py-20 sm:mt-32 sm:py-32 lg:mt-56">
       <Container>
         <FadeIn className="flex items-center gap-x-8">
-          <h2 className="text-center font-display text-sm font-semibold tracking-wider text-white sm:text-left">
-            First, let's pick your archetype
+          <h2 className="text-center font-display text-5xl font-semibold tracking-wider text-white sm:text-left">
+            Six Archetypes
           </h2>
           <div className="h-px flex-auto bg-neutral-800" />
         </FadeIn>
@@ -47,10 +43,17 @@ function Clients() {
             role="list"
             className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10 lg:grid-cols-4"
           >
-            {clients.map(([client, logo]) => (
-              <li key={client}>
+            {types.map(([client, logo]) => (
+              <li key={client.toString()}>
                 <FadeIn>
-                  <Image src={logo} alt={client} unoptimized />
+                  <Image
+                    src={(logo as any).src || logo}
+                    alt="type"
+                    unoptimized
+                    width={500}
+                    height={300}
+                    style={{ borderRadius: '1rem', border: '1px solid #fff' }}
+                  />{' '}
                 </FadeIn>
               </li>
             ))}
@@ -69,13 +72,12 @@ function CaseStudies({
   return (
     <>
       <SectionIntro
-        title="Harnessing technology for a brighter future"
+        title="120 Playing Cards"
         className="mt-24 sm:mt-32 lg:mt-40"
       >
         <p>
-          We believe technology is the answer to the world’s greatest
-          challenges. It’s also the cause, so we find ourselves in bit of a
-          catch 22 situation.
+          Each of the 6 archetypes has a unique set of 20 cards with a unique
+          game corresponding to the archetype.{' '}
         </p>
       </SectionIntro>
       <Container className="mt-16">

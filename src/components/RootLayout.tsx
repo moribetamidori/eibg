@@ -69,10 +69,16 @@ function Header({
           onMouseEnter={() => setLogoHovered(true)}
           onMouseLeave={() => setLogoHovered(false)}
         >
-          <Image className="h-24 w-20" src={imageLogo} alt="logo" />
+          <Image
+            className="h-24 w-20"
+            src={imageLogo}
+            alt="logo"
+            layout="intrinsic"
+            width={500}
+            height={300}
+          />
         </Link>
         <div className="flex items-center gap-x-8">
-          <p>Releasing soon</p>
           <Button href="https://bcad.substack.com/" invert={invert}>
             ✨Subscribe to get notified!
           </Button>
@@ -224,13 +230,13 @@ function RootLayoutInner({ children }: { children: React.ReactNode }) {
               <Container>
                 <div className="grid grid-cols-1 gap-y-10 pb-16 pt-10 sm:grid-cols-2 sm:pt-16">
                   <div>
-                    <h2 className="font-display text-base font-semibold text-white">
+                    {/* <h2 className="font-display text-base font-semibold text-white">
                       Our offices
-                    </h2>
-                    <Offices
+                    </h2> */}
+                    {/* <Offices
                       invert
                       className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2"
-                    />
+                    /> */}
                   </div>
                   <div className="sm:border-l sm:border-transparent sm:pl-16">
                     <h2 className="font-display text-base font-semibold text-white">
