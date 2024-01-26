@@ -18,7 +18,13 @@ import intuitor from '@/images/types/3.png'
 import specialist from '@/images/types/4.png'
 import connector from '@/images/types/5.png'
 import transmuter from '@/images/types/6.png'
-
+import one from '@/images/cards/1.png'
+import two from '@/images/cards/2.png'
+import three from '@/images/cards/3.png'
+import four from '@/images/cards/4.png'
+import five from '@/images/cards/5.png'
+import six from '@/images/cards/6.png'
+import product from '@/images/product.png'
 const types = [
   ['Enhancer', enhancer],
   ['Conjurer', conjurer],
@@ -26,6 +32,14 @@ const types = [
   ['Specialist', specialist],
   ['Connector', connector],
   ['Transmuter', transmuter],
+]
+const cards = [
+  ['one', one],
+  ['two', two],
+  ['three', three],
+  ['four', four],
+  ['five', five],
+  ['six', six],
 ]
 
 function Clients() {
@@ -76,47 +90,33 @@ function CaseStudies({
         className="mt-24 sm:mt-32 lg:mt-40"
       >
         <p>
-          Each of the 6 archetypes has a unique set of 20 cards with a unique
-          game corresponding to the archetype.{' '}
+          Each of the six archetypes features a distinct set of 20 cards, each
+          corresponding to a unique game. These 20 cards are divided into three
+          levels: 8 cards in the first level, 7 in the second, and 5 in the
+          third
         </p>
       </SectionIntro>
       <Container className="mt-16">
-        <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          {caseStudies.map((caseStudy) => (
-            <FadeIn key={caseStudy.href} className="flex">
-              <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8">
-                <h3>
-                  <Link href={caseStudy.href}>
-                    <span className="absolute inset-0 rounded-3xl" />
-                    <Image
-                      src={caseStudy.logo}
-                      alt={caseStudy.client}
-                      className="h-16 w-16"
-                      unoptimized
-                    />
-                  </Link>
-                </h3>
-                <p className="mt-6 flex gap-x-2 text-sm text-neutral-950">
-                  <time
-                    dateTime={caseStudy.date.split('-')[0]}
-                    className="font-semibold"
-                  >
-                    {caseStudy.date.split('-')[0]}
-                  </time>
-                  <span className="text-neutral-300" aria-hidden="true">
-                    /
-                  </span>
-                  <span>Case study</span>
-                </p>
-                <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
-                  {caseStudy.title}
-                </p>
-                <p className="mt-4 text-base text-neutral-600">
-                  {caseStudy.description}
-                </p>
-              </article>
-            </FadeIn>
-          ))}
+        <FadeInStagger faster>
+          <ul
+            role="list"
+            className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10 lg:grid-cols-4"
+          >
+            {cards.map(([client, logo]) => (
+              <li key={client.toString()}>
+                <FadeIn>
+                  <Image
+                    src={(logo as any).src || logo}
+                    alt="type"
+                    unoptimized
+                    width={500}
+                    height={300}
+                    style={{ borderRadius: '1rem', border: '1px solid #fff' }}
+                  />{' '}
+                </FadeIn>
+              </li>
+            ))}
+          </ul>
         </FadeInStagger>
       </Container>
     </>
@@ -184,14 +184,21 @@ export default async function Home() {
 
   return (
     <>
-      <Container className="mt-24 sm:mt-32 md:mt-56">
-        <FadeIn className="max-w-3xl">
-          <h1 className="inline-block bg-gradient-to-r from-red-300 via-green-500 to-indigo-400 bg-clip-text font-display text-5xl font-medium tracking-tight text-neutral-950 text-transparent [text-wrap:balance] sm:text-7xl">
-            Emotional Intelligence Board Game
-          </h1>
-          <p className="mt-6 text-xl text-neutral-600">
-            Remember each other in an unforgettable way.
-          </p>
+      <Container className="mt-24  ">
+        <FadeIn className="w-full">
+          <div className="flex w-full flex-col items-center justify-between md:flex-row">
+            <div className="mb-4 w-full md:mb-0 md:w-7/12">
+              <Image src={product} alt="" unoptimized />
+            </div>
+            <div className="w-full md:w-5/12">
+              <h1 className="inline-block bg-gradient-to-r from-red-300 via-green-500 to-indigo-400 bg-clip-text font-display text-5xl font-medium tracking-tight text-neutral-950 text-transparent [text-wrap:balance] sm:text-7xl">
+                Emotional Intelligence Board Game
+              </h1>
+              <p className="mt-6 text-xl text-neutral-600">
+                Remember each other in an unforgettable way.
+              </p>
+            </div>
+          </div>
         </FadeIn>
       </Container>
 
