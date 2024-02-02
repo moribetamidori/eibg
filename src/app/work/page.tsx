@@ -148,18 +148,18 @@ export default async function Work() {
   return (
     <>
       <PageIntro
-        eyebrow="Our work"
-        title="Proven solutions for real-world problems."
+        eyebrow="Rules"
+        title="Details Coming Soon."
       >
-        <p>
+        {/* <p>
           We believe in efficiency and maximizing our resources to provide the
           best value to our clients. The primary way we do that is by re-using
           the same five projects we’ve been developing for the past decade.
-        </p>
+        </p> */}
       </PageIntro>
 
-      <CaseStudies caseStudies={caseStudies} />
-
+      {/* <CaseStudies caseStudies={caseStudies} /> */}
+{/* 
       <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"
         client={{ name: 'Mail Smirk', logo: logoMailSmirk }}
@@ -168,9 +168,9 @@ export default async function Work() {
         delivered something remarkably similar in record time.
       </Testimonial>
 
-      <Clients />
+      <Clients /> */}
 
-      <ContactSection />
+      {/* <ContactSection /> */}
     </>
   )
 }

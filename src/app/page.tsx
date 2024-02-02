@@ -206,7 +206,7 @@ export default async function Home() {
 
       <CaseStudies caseStudies={caseStudies} />
 
-      <Testimonial
+      {/* <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"
         client={{ name: 'Phobia', logo: logoPhobiaDark }}
       >
@@ -215,9 +215,9 @@ export default async function Home() {
         those annoying permission dialogs.
       </Testimonial>
 
-      <Services />
+      <Services /> */}
 
-      <ContactSection />
+      {/* <ContactSection /> */}
     </>
   )
 }
